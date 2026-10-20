@@ -1,4 +1,4 @@
-x_dimensions = 5;
+x_dimensions = 4;
 f1_integral_exact = sin(1).^x_dimensions; % analytical solution
 f1 = @(xs) prod(cos(xs), 2); % topic function
 

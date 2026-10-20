@@ -1,4 +1,4 @@
-x_dimensions = 5;
+x_dimensions = 4;
 X = sym("x", [1, x_dimensions], "real");
 f2_integral_exact = cos(sum(X));
 for i = 1:x_dimensions

@@ -4,7 +4,7 @@ function MCMs_grapher(x_dimensions, X, fx_integral_exact, fx)
     end
     fx_integral_exact = double(fx_integral_exact); % analytical solution
     
-    exponent_cap = 14; % tweak this, recommend at least 15
+    exponent_cap = 15; % tweak this, recommend at least 15
     iterations = 100; % tweak this, recommend 100
     sample_exponents = 0:exponent_cap;
     sample_sizes = 2.^sample_exponents;
@@ -56,14 +56,14 @@ function MCMs_grapher(x_dimensions, X, fx_integral_exact, fx)
 end
 
 % f1 case
-x_dimensions = 100;
+x_dimensions = 4;
 X = sym("x", [1, x_dimensions], "real");
 f1_integral_exact = sin(1).^x_dimensions;
 f1 = @(xs) prod(cos(xs), 2);
 MCMs_grapher(x_dimensions, X, f1_integral_exact, f1)
 
 % f2 case
-x_dimensions = 5;
+x_dimensions = 4;
 X = sym("x", [1, x_dimensions], "real");
 f2_integral_exact = cos(sum(X));
 f2 = @(xs) cos(sum(xs, 2));
