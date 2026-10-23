@@ -1,6 +1,8 @@
 # Monte Carlo & Quasi-Monte Carlo Experiments
 
-A collection of MATLAB scripts comparing theconvergence rates of Monte Carlo Methods (MCM) against Quasi-Monte Carlo Methods (QMCM and Randomized QMCM) for multidimensional numerical integration over $[0, 1]^d$.
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=NoobChester/Monte-Carlo-Scripts)
+
+A collection of MATLAB scripts comparing the convergence rates of Monte Carlo Methods (MCM) against Quasi-Monte Carlo Methods (QMCM and Randomized QMCM) for multidimensional numerical integration over $[0, 1]^d$.
 
 ---
 
@@ -44,7 +46,7 @@ $$f_2(\mathbf{x}) = \cos\left(\sum_{d=1}^{4} x_d\right), \quad \mathbf{x} \in [0
 
 $$f_1(\mathbf{x}) = \prod_{d=1}^{100} \cos(x_d), \quad \mathbf{x} \in [0, 1]^{100}$$
 
-- **Script**: `MCMs_fx_high_dimensional.m`
+- **Script**: `MCMs_f1_high_dimensional.m`
 
 ![High Dimensional Convergence](output_graphs/high_dimensional.png)
 
