@@ -4,13 +4,16 @@
 
 A collection of MATLAB scripts comparing the convergence rates of Monte Carlo Methods (MCM) against Quasi-Monte Carlo Methods (QMCM and Randomized QMCM) for multidimensional numerical integration over $[0, 1]^d$.
 
+Note: The script [MCMs_fx.m](MCMs_fx.m) allows for custom functions.
+
 ---
 
 ## Methods Compared
 
-- **MCM (Monte Carlo Method)**: Pseudo-random sampling ($\mathcal{O}(N^{-0.5})$).
-- **Deterministic QMCM**: Non-scrambled Sobol sequence sampling ($\approx \mathcal{O}(N^{-1.0})$ in moderate dimensions).
-- **Randomised QMCM (RQMCM)**: Owen-scrambled Sobol sequence sampling (`MatousekAffineOwen`) ($\approx \mathcal{O}(N^{-1.3})$).
+- **MCM (Monte Carlo Method)**: Pseudo-random sampling $\mathcal{O}(N^{-0.5})$.
+- **Deterministic QMCM**: Non-scrambled Sobol sequence sampling $\approx \mathcal{O}(N^{-1.0})$ in moderate dimensions.
+- **Randomised QMCM (RQMCM)**: Owen-scrambled Sobol sequence sampling (MatousekAffineOwen) $\approx \mathcal{O}(N^{-1.3})$.
+- Convergence rates shown are in low dimensions.
 
 ---
 
@@ -20,12 +23,12 @@ A collection of MATLAB scripts comparing the convergence rates of Monte Carlo Me
 
 $$f_1(\mathbf{x}) = \prod_{d=1}^{4} \cos(x_d), \quad \mathbf{x} \in [0, 1]^4$$
 
-- **Analytical Integral**: $I(f_1) = \sin(1)^4 \approx 0.50198$
+- **Analytical Integral**: $\sin(1)^4$
 - **Script**: `MCMs_f1.m`
 
 ![Test Function 1 Convergence](output_graphs/MCMs_f1.png)
 
-> **Key Takeaway**: In 4 dimensions, Deterministic QMCM attains $\sim \mathcal{O}(N^{-1.0})$ error decay, while Randomised QMCM achieves the fastest convergence rate near $\mathcal{O}(N^{-1.3})$.
+> **Observation**: In 4 dimensions, Deterministic QMCM attains $\sim \mathcal{O}(N^{-1.0})$ error decay, while Randomised QMCM achieves the fastest convergence rate near $\mathcal{O}(N^{-1.3})$.
 
 ---
 
@@ -33,12 +36,12 @@ $$f_1(\mathbf{x}) = \prod_{d=1}^{4} \cos(x_d), \quad \mathbf{x} \in [0, 1]^4$$
 
 $$f_2(\mathbf{x}) = \cos\left(\sum_{d=1}^{4} x_d\right), \quad \mathbf{x} \in [0, 1]^4$$
 
-- **Analytical Integral**: Computed symbolically via MATLAB Symbolic Math Toolbox
+- **Analytical Integral**: Computed with MATLAB Symbolic Math Toolbox
 - **Script**: `MCMs_f2.m`
 
 ![Test Function 2 Convergence](output_graphs/MCMs_f2.png)
 
-> **Key Takeaway**: Consistent with $f_1$, RQMCM outperforms both standard MCM and deterministic Sobol sampling on non-separable integrand $f_2$.
+> **Observation**: Consistent with $f_1$, RQMCM outperforms both standard MCM and deterministic QMCM on non-separable integrand $f_2$.
 
 ---
 
@@ -46,8 +49,9 @@ $$f_2(\mathbf{x}) = \cos\left(\sum_{d=1}^{4} x_d\right), \quad \mathbf{x} \in [0
 
 $$f_1(\mathbf{x}) = \prod_{d=1}^{100} \cos(x_d), \quad \mathbf{x} \in [0, 1]^{100}$$
 
+- **Analytical Integral**: $\sin(1)^{100}$
 - **Script**: `MCMs_f1_high_dimensional.m`
 
 ![High Dimensional Convergence](output_graphs/high_dimensional.png)
 
-> **Key Takeaway**: In high dimensions ($d = 100$), the low-discrepancy advantage of QMCM deteriorates due to the curse of dimensionality. RQMCM convergence degrades to match the standard MCM rate ($\mathcal{O}(N^{-0.5})$).
+> **Observation**: In high dimensions ($d = 100$), the result blows up, QMCM deteriorates is very hard to compute and omitted here due to the curse of dimensionality. RQMCM convergence degrades and approaches the MCM rate ($\mathcal{O}(N^{-0.5})$).
