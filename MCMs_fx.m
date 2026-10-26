@@ -50,7 +50,7 @@ function MCMs_grapher(x_dimensions, X, fx_integral_exact, fx)
     loglog(sample_sizes, (sample_sizes.^-1.3), 'DisplayName', '\mathcal{O}(N^{-1.3})') % trial and error
     loglog(sample_sizes, normal_RQMCM_RMSE_error, 'DisplayName', 'Randomised QMCM')
     
-    xlabel('Sample Size (to the power of 2)');
+    xlabel('Sample Size (exponent of 2)');
     ylabel({'Root Mean Square Error', '(normalised to start at 1)'});
     legend('Interpreter', 'latex', 'Location', 'southwest');
 end

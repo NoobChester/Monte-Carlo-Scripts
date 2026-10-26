@@ -54,6 +54,6 @@ loglog(sample_sizes, (sample_sizes.^-1.3), 'DisplayName', '\mathcal{O}(N^{-1.3})
 loglog(sample_sizes, RQMCM_RMSE_error./RQMCM_RMSE_error(1), 'DisplayName', 'Randomised QMCM')
 
 title(sprintf('$f_2(\\mathbf{x}) = \\cos\\left(\\sum_{d=1}^{%d} x_d \\right)$', x_dimensions), 'Interpreter', 'latex');
-xlabel('Sample Size (to the power of 2)');
+xlabel('Sample Size (exponent of 2)');
 ylabel({'Root Mean Square Error', '(normalised to start at 1)'});
 legend('Interpreter', 'latex', 'Location', 'southwest');
